@@ -3,7 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"leetcode/problems/easy"
+	"leetcode/solution"
 	"os"
 )
 
@@ -22,13 +22,21 @@ func main() {
 	var n int
 	_, _ = fmt.Fscan(in, &n)
 
-	arr := make([]int, n)
+	// slice
+	// todo wrap in functions
+	//arr := make([]int, n)
+	//
+	//for i := 0; i < n; i++ {
+	//	var value int
+	//	_, _ = fmt.Fscan(in, &value)
+	//	arr[i] = value
+	//}
 
-	for i := 0; i < n; i++ {
-		var value int
-		_, _ = fmt.Fscan(in, &value)
-		arr[i] = value
-	}
+	// string
+	// todo wrap in functions
+	var s string
+	_, _ = fmt.Fscan(in, &s)
 
-	_, _ = fmt.Fprintln(out, easy.MajorityElement(arr))
+	// output
+	_, _ = fmt.Fprintln(out, solution.LengthOfLongestSubstring(s))
 }

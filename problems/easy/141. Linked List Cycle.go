@@ -5,7 +5,7 @@ type ListNode struct {
 	Next *ListNode
 }
 
-func hasCycle(head *ListNode) bool {
+func HasCycle(head *ListNode) bool {
 	slow, fast := head, head
 	if slow == nil || fast == nil {
 		return false
