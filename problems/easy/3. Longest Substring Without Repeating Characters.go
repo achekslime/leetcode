@@ -1,39 +1,21 @@
 package easy
 
-import "strings"
-
 func LengthOfLongestSubstring(s string) int {
-	past := strings.Split(s, "")
-	if s == "" {
-		return 0
-	}
-	maxSubstr := 1
-
-	for len(past) > 1 {
-		current := make([]string, 0)
-		for i := 0; i < len(past)-1; i++ {
-			if past[i+1] == "" {
-				continue
-			}
-			if past[i] == "" {
-				current = append(current, "")
-				continue
-			}
-			a := []rune(past[i])
-			b := []rune(past[i+1])
-			if a[0] != b[len(b)-1] {
-				current = append(current, past[i]+string(b[len(b)-1]))
-				maxSubstr = len(past[i]) + 1
-			} else {
-				if len(current) == 1 {
-					current = make([]string, 0)
-				} else {
-					current = append(current, "")
-				}
+	past := []rune(s)
+	charSet := make(map[rune]int)
+	maxLength := 0
+	currML := 0
+	l := 0
+	for i := 0; i < len(past); i++ {
+		if _, ok := charSet[past[i]]; ok {
+			tempL := charSet[past[i]] + 1
+			if tempL > l {
+				l = tempL
 			}
 		}
-		past = current
+		currML = i - l + 1
+		charSet[past[i]] = i
+		maxLength = max(maxLength, currML)
 	}
-
-	return maxSubstr
+	return maxLength
 }
