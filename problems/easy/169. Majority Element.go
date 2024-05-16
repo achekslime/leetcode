@@ -1,6 +1,6 @@
 package easy
 
-func MajorityElement(nums []int) int {
+func majorityElement(nums []int) int {
 	frequency := make(map[int]int)
 	for i := range nums {
 		frequency[nums[i]]++

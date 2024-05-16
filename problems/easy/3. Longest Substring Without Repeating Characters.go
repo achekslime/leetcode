@@ -1,6 +1,6 @@
 package easy
 
-func LengthOfLongestSubstring(s string) int {
+func lengthOfLongestSubstring(s string) int {
 	past := []rune(s)
 	charSet := make(map[rune]int)
 	maxLength := 0
