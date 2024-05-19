@@ -1,4 +1,4 @@
-package easy
+package medium
 
 func lengthOfLongestSubstring(s string) int {
 	past := []rune(s)

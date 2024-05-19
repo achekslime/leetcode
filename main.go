@@ -38,6 +38,6 @@ func main() {
 	_, _ = fmt.Fscan(in, &s)
 
 	// output
-	d := solution.LongestPalindrome(s)
-	_, _ = fmt.Fprintln(out, d)
+	longestPalindrome := solution.LongestPalindrome(s)
+	_, _ = fmt.Fprintln(out, longestPalindrome)
 }

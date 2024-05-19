@@ -1,10 +1,10 @@
-package solution
+package medium
 
 import (
 	"strings"
 )
 
-func LongestPalindrome(s string) string {
+func longestPalindrome(s string) string {
 	ss := strings.Split(s, "")
 	maxOdd := OddPalindromes(ss)
 	maxEven := EvenPalindromes(ss)
