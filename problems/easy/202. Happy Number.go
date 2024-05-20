@@ -1,6 +1,6 @@
-package utils
+package easy
 
-func IsHappy(n int) bool {
+func isHappy(n int) bool {
 	mp := make(map[int]bool)
 	mp[n] = true
 	for {
