@@ -1,4 +1,4 @@
-package utils
+package easy
 
 func merge(nums1 []int, m int, nums2 []int, n int) {
 	reserve := make([]int, len(nums1))
