@@ -1,26 +1,18 @@
 package easy
 
 func merge(nums1 []int, m int, nums2 []int, n int) {
-	reserve := make([]int, len(nums1))
-	copy(reserve, nums1)
-	j, k := 0, 0
-	for i := 0; i < m+n; i++ {
-		if j >= m {
+	j, k := m-1, n-1
+	i := m + n - 1
+	for ; j >= 0 && k >= 0; i-- {
+		if nums2[k] >= nums1[j] {
 			nums1[i] = nums2[k]
-			k++
-			continue
-		}
-		if k >= n {
-			nums1[i] = reserve[j]
-			j++
-			continue
-		}
-		if reserve[j] < nums2[k] {
-			nums1[i] = reserve[j]
-			j++
+			k--
 		} else {
-			nums1[i] = nums2[k]
-			k++
+			nums1[i] = nums1[j]
+			j--
 		}
+	}
+	if k >= 0 {
+		copy(nums1[:i+1], nums2[:k+1])
 	}
 }
