@@ -1,6 +1,6 @@
-package solution
+package easy
 
-func ClimbStairs(n int) int {
+func climbStairs(n int) int {
 	d := make([]int, n+1)
 	d[0] = 1
 	d[1] = 1

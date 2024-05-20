@@ -2,8 +2,8 @@ package main
 
 import (
 	"bufio"
-	"fmt"
 	"leetcode/solution"
+	"leetcode/utils"
 	"os"
 )
 
@@ -16,28 +16,12 @@ func initBuffers() (*bufio.Reader, *bufio.Writer) {
 }
 
 func main() {
-	in, out := initBuffers()
-	defer out.Flush()
+	console := utils.NewReaderWriter()
 
-	var n int
-	_, _ = fmt.Fscan(in, &n)
-
-	// slice
-	// todo wrap in functions
-	//arr := make([]int, n)
-	//
-	//for i := 0; i < n; i++ {
-	//	var value int
-	//	_, _ = fmt.Fscan(in, &value)
-	//	arr[i] = value
-	//}
-
-	// string
-	// todo wrap in functions
-	var s string
-	_, _ = fmt.Fscan(in, &s)
+	// input
+	n := console.ReadInt()
 
 	// output
-	longestPalindrome := solution.LongestPalindrome(s)
-	_, _ = fmt.Fprintln(out, longestPalindrome)
+	ans := solution.ClimbStairs(n)
+	console.PrintInt(ans)
 }
