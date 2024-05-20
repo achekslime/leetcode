@@ -1,7 +1,6 @@
 package main
 
 import (
-	"leetcode/solution"
 	"leetcode/utils"
 )
 
@@ -12,6 +11,6 @@ func main() {
 	n := console.ReadInt()
 
 	// output
-	ans := solution.ClimbStairs(n)
+	ans := utils.ClimbStairs(n)
 	console.PrintInt(ans)
 }

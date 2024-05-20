@@ -1,4 +1,4 @@
-package solution
+package utils
 
 func ClimbStairs(n int) int {
 	d := make([]int, n+1)
