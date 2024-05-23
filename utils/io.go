@@ -54,3 +54,8 @@ func (reader *ReaderWriter) PrintBool(is bool) {
 	_, _ = fmt.Fprintln(reader.out, is)
 	defer reader.out.Flush()
 }
+
+func (reader *ReaderWriter) PrintSlice(slice []int) {
+	_, _ = fmt.Fprintln(reader.out, slice)
+	defer reader.out.Flush()
+}

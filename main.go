@@ -6,7 +6,9 @@ func main() {
 	console := utils.NewReaderWriter()
 
 	n := console.ReadInt()
+	arr := console.ReadSliceInt(n)
+	target := console.ReadInt()
 
-	ans := utils.IsHappy(n)
-	console.PrintBool(ans)
+	ans := utils.TwoSum(arr, target)
+	console.PrintSlice(ans)
 }

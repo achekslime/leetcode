@@ -1,6 +1,6 @@
-package utils
+package easy
 
-func TwoSum(nums []int, target int) []int {
+func twoSum(nums []int, target int) []int {
 	mp := map[int]int{}
 	for i, v := range nums {
 		if j, ok := mp[target-v]; ok {
