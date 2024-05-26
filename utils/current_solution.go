@@ -1,12 +1,13 @@
 package utils
 
-func TwoSum(nums []int, target int) []int {
-	mp := map[int]int{}
+func MissingNumber(nums []int) int {
+	n := len(nums)
+	sum := 0
+	sumActual := 0
 	for i, v := range nums {
-		if j, ok := mp[target-v]; ok {
-			return []int{i, j}
-		}
-		mp[v] = i
+		sum += i
+		sumActual += v
 	}
-	return []int{}
+	sum += n
+	return sum - sumActual
 }

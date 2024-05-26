@@ -7,8 +7,7 @@ func main() {
 
 	n := console.ReadInt()
 	arr := console.ReadSliceInt(n)
-	target := console.ReadInt()
 
-	ans := utils.TwoSum(arr, target)
-	console.PrintSlice(ans)
+	ans := utils.MissingNumber(arr)
+	console.PrintInt(ans)
 }
