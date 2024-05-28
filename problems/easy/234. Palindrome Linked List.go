@@ -1,11 +1,6 @@
-package utils
+package easy
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
-
-func IsPalindrome(head *ListNode) bool {
+func isPalindrome(head *ListNode) bool {
 	slice := make([]int, 0)
 	for head != nil {
 		slice = append(slice, head.Val)

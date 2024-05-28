@@ -1,11 +1,11 @@
 package easy
 
-type listNode struct {
+type ListNode struct {
 	Val  int
-	Next *listNode
+	Next *ListNode
 }
 
-func hasCycle(head *listNode) bool {
+func hasCycle(head *ListNode) bool {
 	slow, fast := head, head
 	if slow == nil || fast == nil {
 		return false
