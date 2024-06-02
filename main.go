@@ -5,9 +5,8 @@ import "leetcode/utils"
 func main() {
 	console := utils.NewReaderWriter()
 
-	n := console.ReadInt()
-	arr := console.ReadSliceInt(n)
+	n := console.ReadString()
 
-	ans := utils.MissingNumber(arr)
-	console.PrintInt(ans)
+	ans := utils.IsValid(n)
+	console.PrintBool(ans)
 }

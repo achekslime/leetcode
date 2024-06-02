@@ -1,8 +1,8 @@
-package utils
+package easy
 
 import "strings"
 
-func IsValid(s string) bool {
+func isValid(s string) bool {
 	ss := strings.Split(s, "")
 	check := make([]string, 0)
 	for i := range ss {
