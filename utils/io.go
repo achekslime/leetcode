@@ -59,3 +59,43 @@ func (reader *ReaderWriter) PrintSlice(slice []int) {
 	_, _ = fmt.Fprintln(reader.out, slice)
 	defer reader.out.Flush()
 }
+
+type ListNode struct {
+	Val  int
+	Next *ListNode
+}
+
+func (reader *ReaderWriter) ReadLinkedListInt() *ListNode {
+	length := reader.ReadInt()
+	arr := reader.ReadSliceInt(length)
+	head := &ListNode{Val: 0}
+	prev := head
+	for _, v := range arr {
+		curr := &ListNode{Val: v}
+		prev.Next = curr
+		prev = curr
+	}
+	return head.Next
+}
+
+func (reader *ReaderWriter) PrintLinkedListInt(head *ListNode) {
+	fmt.Print("[")
+	for head != nil {
+		if head.Next != nil {
+			fmt.Printf("%d,", head.Val)
+		} else {
+			fmt.Printf("%d", head.Val)
+		}
+		head = head.Next
+	}
+	fmt.Print("]")
+	defer reader.out.Flush()
+}
+
+func (reader *ReaderWriter) ReadKLinkedListInt(count int) []*ListNode {
+	lists := make([]*ListNode, count)
+	for i := 0; i < count; i++ {
+		lists[i] = reader.ReadLinkedListInt()
+	}
+	return lists
+}

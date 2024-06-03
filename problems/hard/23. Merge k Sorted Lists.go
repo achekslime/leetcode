@@ -1,8 +1,13 @@
-package utils
+package hard
 
 import "slices"
 
-func MergeKLists(lists []*ListNode) *ListNode {
+type ListNode struct {
+	Val  int
+	Next *ListNode
+}
+
+func mergeKLists(lists []*ListNode) *ListNode {
 	head := &ListNode{Val: 0}
 	prev := head
 	current := &ListNode{}
