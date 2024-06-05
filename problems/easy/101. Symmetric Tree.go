@@ -1,4 +1,4 @@
-package utils
+package easy
 
 type TreeNode struct {
 	Val   int
@@ -6,7 +6,7 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-func IsSymmetric(root *TreeNode) bool {
+func isSymmetric(root *TreeNode) bool {
 	if root == nil {
 		return true
 	}
