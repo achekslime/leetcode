@@ -23,7 +23,7 @@ func mergeKLists(lists []*ListNode) *ListNode {
 			if current == nil {
 				current = lists[i]
 				currentI = i
-			} else if lists[i] != nil {
+			} else {
 				if lists[i].Val < current.Val {
 					current = lists[i]
 					currentI = i
