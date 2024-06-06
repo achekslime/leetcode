@@ -5,8 +5,12 @@ import "leetcode/utils"
 func main() {
 	console := utils.NewReaderWriter()
 
-	root := &utils.TreeNode{Val: 3}
+	lists := console.ReadKLinkedListInt()
 
-	isSym := utils.IsSymmetric(root)
-	console.PrintBool(isSym)
+	//lists := make([]*utils.ListNode, 2)
+	//lists[0] = nil
+	//lists[1] = &utils.ListNode{Val: 1}
+
+	sorted := utils.MergeKLists(lists)
+	console.PrintLinkedListInt(sorted)
 }

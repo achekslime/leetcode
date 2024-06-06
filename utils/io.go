@@ -92,7 +92,8 @@ func (reader *ReaderWriter) PrintLinkedListInt(head *ListNode) {
 	defer reader.out.Flush()
 }
 
-func (reader *ReaderWriter) ReadKLinkedListInt(count int) []*ListNode {
+func (reader *ReaderWriter) ReadKLinkedListInt() []*ListNode {
+	count := reader.ReadInt()
 	lists := make([]*ListNode, count)
 	for i := 0; i < count; i++ {
 		lists[i] = reader.ReadLinkedListInt()

@@ -1,33 +1,47 @@
 package utils
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
+func MergeKLists(lists []*ListNode) *ListNode {
+	if len(lists) == 0 {
+		return nil
+	}
+
+	if len(lists) == 1 {
+		return lists[0]
+	}
+
+	result := lists[0]
+	for i := 1; i < len(lists); i++ {
+		result = mergeLists(result, lists[i])
+	}
+	return result
 }
 
-func IsSymmetric(root *TreeNode) bool {
-	if root == nil {
-		return true
+func mergeLists(a, b *ListNode) *ListNode {
+	curr := &ListNode{}
+	head := curr
+	if a == nil {
+		return b
 	}
-
-	qLeft := []*TreeNode{root.Left}
-	qRight := []*TreeNode{root.Right}
-
-	for len(qLeft) != 0 && len(qRight) != 0 {
-		currLeft := qLeft[0]
-		currRight := qRight[0]
-		qLeft = qLeft[1:]
-		qRight = qRight[1:]
-		if currLeft == nil && currRight == nil {
-			continue
-		}
-		if currLeft == nil || currRight == nil || currLeft.Val != currRight.Val {
-			return false
-		}
-		qLeft = append(qLeft, currLeft.Left, currLeft.Right)
-		qRight = append(qRight, currRight.Right, currRight.Left)
+	if b == nil {
+		return a
 	}
-
-	return true
+	for a != nil || b != nil {
+		if a == nil {
+			curr.Next = b
+			return head.Next
+		}
+		if b == nil {
+			curr.Next = a
+			return head.Next
+		}
+		if a.Val < b.Val {
+			curr.Next = a
+			a = a.Next
+		} else {
+			curr.Next = b
+			b = b.Next
+		}
+		curr = curr.Next
+	}
+	return head
 }
