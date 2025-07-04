@@ -1,6 +1,6 @@
 package easy
 
-func maxProfit(prices []int) int {
+func MaxProfit(prices []int) int {
 	n := len(prices)
 	min, max := prices[0], prices[0]
 	ans := 0
