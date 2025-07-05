@@ -1,4 +1,6 @@
-package easy
+package medium
+
+import "leetcode/problems/easy"
 
 var mp map[int]int8
 
@@ -17,7 +19,7 @@ func removeDuplicates2(nums []int) int {
 			}
 			continue
 		}
-		swap(nums, i, next)
+		easy.swap(nums, i, next)
 		if !uniq2(nums[i]) {
 			i--
 		} else {

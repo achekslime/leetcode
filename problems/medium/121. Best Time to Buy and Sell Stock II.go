@@ -1,4 +1,4 @@
-package easy
+package medium
 
 func MaxProfit2(prices []int) int {
 	n := len(prices)
